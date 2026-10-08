@@ -1,0 +1,7 @@
+Checking: Circular Plan
+Status: Rejected
+Reason: Circular plan detected: ['build_image', 'run_tests', 'build_image']
+
+Checking: Missing Producer Plan
+Status: Rejected
+Reason: deploy_app: no producer for 'security_approved'
