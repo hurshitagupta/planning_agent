@@ -1,0 +1,10 @@
+Case 1: Valid Plan
+Plan: ['prepare_code', 'run_tests', 'build_image', 'deploy_app', 'verify_deployment']
+Problems: []
+
+Case 2: Incorrect Order
+Plan: ['deploy_app', 'verify_deployment', 'run_tests', 'build_image', 'prepare_code']
+Problems: ["deploy_app: missing ['image_ready', 'tests_passed']", "verify_deployment: missing ['app_deployed']", "run_tests: missing ['code_ready']", "build_image: missing ['code_ready']", "goal not reached: ['deployment_verified']"]
+
+Case 3: Unreachable Goal
+Problems: ["goal not reached: ['payment_completed']"]
