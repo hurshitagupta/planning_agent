@@ -1,0 +1,14 @@
+Shuffled Plan:
+['deploy_app', 'run_tests', 'build_image', 'verify_deployment', 'prepare_code']
+
+Ordered Plan:
+['prepare_code', 'run_tests', 'build_image', 'deploy_app', 'verify_deployment']
+
+Execution Trace:
+READY: prepare_code | needs=[] | gives=['code_ready']
+READY: run_tests | needs=['code_ready'] | gives=['tests_passed']
+READY: build_image | needs=['code_ready'] | gives=['image_ready']
+READY: deploy_app | needs=['image_ready', 'tests_passed'] | gives=['app_deployed']
+READY: verify_deployment | needs=['app_deployed'] | gives=['deployment_verified']
+
+Goal reached: True

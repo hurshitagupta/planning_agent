@@ -1,5 +1,5 @@
 import pytest
-from planning_concepts import Step, create_plan
+from model_plan import Step, create_plan
 
 def test_plan_has_five_steps():
     plan = create_plan()
