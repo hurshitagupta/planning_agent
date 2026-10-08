@@ -1,0 +1,6 @@
+Deployment Plan:
+prepare_code: needs=[], gives=['code_ready']
+run_tests: needs=['code_ready'], gives=['tests_passed']
+build_image: needs=['code_ready'], gives=['image_ready']
+deploy_app: needs=['image_ready', 'tests_passed'], gives=['app_deployed']
+verify_deployment: needs=['app_deployed'], gives=['deployment_verified']
